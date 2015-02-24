@@ -1,1 +1,12 @@
-Here you can manage users
+- content_for(:title, 'Class Dashboard')
+Here you can manage pupils
+.row
+  - @users.each do |u|
+    .col-md-3
+      .thumbnail
+        = image_tag(u.avatar.url, :height =>"100px", :width =>"100px" )
+        .caption.center
+          %h3 #{u.username.humanize}
+          %hr
+          = fa_icon "envelope"
+          = link_to u.email, u

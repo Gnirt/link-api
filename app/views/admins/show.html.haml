@@ -1,0 +1,14 @@
+%p#notice= notice
+.row
+  .col-sm-12.col-md-5.col-md-offset-3
+    .thumbnail
+      .caption.center
+        %h3 #{@admin.name.humanize unless @admin.name.blank?}
+        = fa_icon "envelope"
+        = @admin.email
+        %hr
+
+
+= link_to 'Edit', edit_admin_path(@admin)
+|
+= link_to 'Back', admins_path

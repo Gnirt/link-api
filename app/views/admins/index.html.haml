@@ -1,2 +1,15 @@
-- title 'Admin'
-%p Welcome to Admin Section.
+- content_for(:title, 'Teachers dashboard')
+%p Welcome to Teacher Section. Your class name is #{current_admin.try(:name) || '"Unknow"'}
+.row
+  - @admins.each do |admin|
+    .col-md-3
+      .thumbnail
+        .caption.center
+          %h3 #{admin.try(:name) || 'Unknown name'}
+          %hr
+          = fa_icon "envelope"
+          = link_to admin.email, admin
+          = link_to 'Edit', edit_admin_path(admin)
+          = link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' }
+
+= link_to 'New Admin', new_admin_path

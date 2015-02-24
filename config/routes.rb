@@ -10,6 +10,8 @@ Link::Application.routes.draw do
   get '/dashboard' => 'dashboard#index', as: :dashboard
 
   get '/u/:username' =>  'users#show', as: :user_profile
+
+  get '/users/:id', :to => 'users#show', :as => :user
  
   resources :home, only: :index
   resources :admins

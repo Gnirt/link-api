@@ -73,13 +73,12 @@
                     Edit profile
                 %li
                   %a{:href => user_profile_path(current_user.username)}
-                    = fa_icon "user"
+                    = fa_icon "pupils"
                     Me
                 %li= link_to 'Sign out', destroy_user_session_path, method: :delete
               - if admin_signed_in?
-                %li= current_admin.email
-                %li= link_to 'Admin section', admins_path
-                %li= link_to 'Manage users', manage_path
+                %li= link_to 'Teachers section', admins_path
+                %li= link_to 'Manage pupils', manage_path
                 %li= link_to 'Sign out', destroy_admin_session_path, method: :delete
           / /.nav-collapse
       / Begin page content
