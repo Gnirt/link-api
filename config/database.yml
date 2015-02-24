@@ -68,6 +68,7 @@ development:
   username: postgres
   password: Pa$$w0rd
   host: localhost
+  prepared_statements: false
 
 # Warning: The database defined as "test" will be erased and
 # re-generated from your development database when you run "rake".

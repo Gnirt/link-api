@@ -38,7 +38,7 @@ gem 'font-awesome-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
-
+gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -47,6 +47,8 @@ gem 'paperclip', '~> 3.0'
 
 # Twitter Bootstrap 3
 gem 'bootstrap-sass', '~> 3.3.3'
+gem 'bootstrap-will_paginate'
+gem 'will_paginate'
 
 # Using thin for development server
 gem 'thin', :group => :development
@@ -67,3 +69,5 @@ end
 
 # Use debugger
 # gem 'debugger', group: [:development, :test]
+
+gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'

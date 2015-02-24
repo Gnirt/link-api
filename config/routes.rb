@@ -17,5 +17,11 @@ Link::Application.routes.draw do
   resources :admins
 
   root to: "dashboard#index"
-
+  resources :conversations, only: [:index, :show, :destroy] do
+    member do
+      post :reply
+      post :mark_as_read
+    end
+  end
+  resources :messages, only: [:new, :create]
 end

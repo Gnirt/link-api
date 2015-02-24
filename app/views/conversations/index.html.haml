@@ -1,0 +1,6 @@
+- content_for(:title, "Your Conversations")
+- title 'Your Conversations'
+%p= link_to 'Start conversation', new_message_path, class: 'btn btn-lg btn-primary'
+%ul.list-group
+  = render partial: 'conversations/conversation', collection: @conversations
+= will_paginate
