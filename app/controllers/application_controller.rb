@@ -1,9 +1,12 @@
 class ApplicationController < ActionController::Base
   # Prevent CSRF attacks by raising an exception.
   # For APIs, you may want to use :null_session instead.
-  protect_from_forgery with: :exception
+  protect_from_forgery with: :null_session
+  acts_as_token_authentication_handler_for User, fallback_to_devise: false
   # This is our new function that comes before Devise's one
   before_filter :authenticate_user_from_token!
+  # This is Devise's authentication
+  before_filter :authenticate_user!
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:warning] = 'Resource not found.'
@@ -17,9 +20,15 @@ class ApplicationController < ActionController::Base
   private
 
   def authenticate_user_from_token!
+    # Set the authentication token params if not already present,
+    if user_token = params[:user_token].blank? && request.headers["X-User-Token"]
+      params[:user_token] = user_token
+    end
+    if user_email = params[:user_email].blank? && request.headers["X-User-Email"]
+      params[:user_email] = user_email
+    end
     user_email = params[:user_email].presence
     user       = user_email && User.find_by_email(user_email)
-
     # Notice how we use Devise.secure_compare to compare the token
     # in the database with the token given in the params, mitigating
     # timing attacks.

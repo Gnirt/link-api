@@ -11,6 +11,7 @@ class User < ActiveRecord::Base
          :lockable
 
   acts_as_messageable
+  acts_as_token_authenticatable
 
   def mailboxer_email(object)
     email

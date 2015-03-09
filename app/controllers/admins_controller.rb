@@ -22,6 +22,18 @@ class AdminsController < ApplicationController
   end
 
   def manage
+    @admin = current_admin
     @users = current_admin.users || []
+  end
+
+  def add_student
+    admin = Admin.find(params[:admin_id])
+    admin.users << User.find(params[:user_id])
+    if admin.save
+      flash[:notice] = "You have successfully added a pupil."
+    else
+      flash[:error] = admin.errors.full_messages
+    end
+    redirect_to manage_path
   end
 end

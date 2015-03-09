@@ -7,7 +7,7 @@ gem 'rails', '4.2.0'
 
 # Use Devise for user authentication
 gem 'devise', '~> 3.4.1'
-
+gem 'simple_token_authentication'
 # Use sqlite3 as the database for Active Record
 # gem 'sqlite3'
 
@@ -17,6 +17,7 @@ gem 'pg'
 gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'pry-rails', :group => :development
+gem 'pry-byebug', :group => :development
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -32,7 +33,7 @@ gem 'coffee-rails', '~> 4.0.0'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
-
+gem 'chosen-rails'
 # FontAwesome
 gem 'font-awesome-rails'
 

@@ -14,7 +14,9 @@ Link::Application.routes.draw do
   get '/users/:id', :to => 'users#show', :as => :user
  
   resources :home, only: :index
-  resources :admins
+  resources :admins do
+    post 'add_student', to: 'admins#add_student', as: :admins_add_student
+  end
 
   root to: "dashboard#index"
   resources :conversations, only: [:index, :show, :destroy] do
@@ -24,4 +26,11 @@ Link::Application.routes.draw do
     end
   end
   resources :messages, only: [:new, :create]
+
+  namespace :api do
+    namespace :v1 do
+      resources :users, except: [:new, :edit]
+    end
+  end
+
 end
