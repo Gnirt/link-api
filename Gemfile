@@ -42,7 +42,7 @@ gem 'turbolinks'
 gem 'jquery-turbolinks'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
-
+gem 'kaminari' # adds pagination to ActiveModels
 
 gem 'paperclip', '~> 3.0'
 
