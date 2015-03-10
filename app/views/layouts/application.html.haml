@@ -77,10 +77,13 @@
                     Me
                 %li= link_to 'Your Conversations', conversations_path
                 %li= link_to 'Sign out', destroy_user_session_path, method: :delete
-              - if admin_signed_in?
+              - elsif admin_signed_in?
                 %li= link_to 'Teachers section', teachers_path
                 %li= link_to 'Manage pupils', manage_path
                 %li= link_to 'Sign out', destroy_admin_session_path, method: :delete
+              - else
+                %li= link_to 'Pupil log in', login_path
+                %li= link_to 'Teacher log in', teachers_login_path
           / /.nav-collapse
       / Begin page content
       .container.container-main

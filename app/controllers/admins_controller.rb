@@ -27,7 +27,7 @@ class AdminsController < ApplicationController
   end
 
   def add_student
-    admin = Admin.find(params[:admin_id])
+    admin = Admin.find(params[:teacher_id])
     admin.users << User.find(params[:user_id])
     if admin.save
       flash[:notice] = "You have successfully added a pupil."

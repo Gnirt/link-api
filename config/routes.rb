@@ -1,5 +1,6 @@
 Link::Application.routes.draw do
 
+  resources :friendships, only: [:create, :destroy]
   devise_for :users, :controllers => { :registrations => :registrations }
   devise_for :admins
   devise_scope :user do

@@ -13,6 +13,12 @@ class User < ActiveRecord::Base
   acts_as_messageable
   acts_as_token_authenticatable
 
+  has_many :friendships
+  has_many :friends, :through => :friendships
+
+  has_many :inverse_friendships, :class_name => "Friendship", :foreign_key => "friend_id"
+  has_many :inverse_friends, :through => :inverse_friendships, :source => :user
+
   def mailboxer_email(object)
     email
   end

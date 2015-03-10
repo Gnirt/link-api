@@ -7,3 +7,15 @@
         = fa_icon "envelope"
         = @user.email
         %hr
+        - unless @user.admin.blank?
+          %p.lead
+            Class name :
+            = link_to @user.admin.name, teacher_path(@user.admin)
+            = link_to "Add Friend", friendships_path(friend_id: @user), :method => :post
+            - unless @user.friendships.blank?
+              Pen pal :
+              - @user.friendships.each do |friendship|
+                = friendship.friend.username
+                (
+                = link_to "remove", friendship, :method => :delete
+                )
