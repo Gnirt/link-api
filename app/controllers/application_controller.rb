@@ -5,8 +5,6 @@ class ApplicationController < ActionController::Base
   acts_as_token_authentication_handler_for User, fallback_to_devise: false
   # This is our new function that comes before Devise's one
   before_filter :authenticate_user_from_token!
-  # This is Devise's authentication
-  before_filter :authenticate_user!
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:warning] = 'Resource not found.'

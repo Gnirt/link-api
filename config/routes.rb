@@ -2,19 +2,25 @@ Link::Application.routes.draw do
 
   devise_for :users, :controllers => { :registrations => :registrations }
   devise_for :admins
+  devise_scope :user do
+    get "/login" => "devise/sessions#new"
+  end
+  devise_scope :admin do
+    get "teachers/login" => "devise/sessions#new"
+  end
 
   get '/token' => 'home#token', as: :token
 
-  get '/admins/manage' => 'admins#manage', as: :manage
+  get '/teachers/manage' => 'admins#manage', as: :manage
 
   get '/dashboard' => 'dashboard#index', as: :dashboard
 
-  get '/u/:username' =>  'users#show', as: :user_profile
+  get '/pupils/:username' =>  'users#show', as: :user_profile
 
-  get '/users/:id', :to => 'users#show', :as => :user
+  get '/pupils/:id', :to => 'users#show', :as => :user
  
   resources :home, only: :index
-  resources :admins do
+  resources :teachers, :controller => "admins" do
     post 'add_student', to: 'admins#add_student', as: :admins_add_student
   end
 

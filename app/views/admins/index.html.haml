@@ -8,8 +8,8 @@
           %h3 #{admin.try(:name) || 'Unknown name'}
           %hr
           = fa_icon "envelope"
-          = link_to admin.email, admin
-          = link_to 'Edit', edit_admin_path(admin)
-          = link_to 'Destroy', admin, method: :delete, data: { confirm: 'Are you sure?' }
+          = link_to admin.email, teacher_path(admin)
+          = link_to 'Edit', edit_teacher_path(admin)
+          = link_to 'Destroy', teacher_path(admin), method: :delete, data: { confirm: 'Are you sure?' } #todo destroy admin path REMINDER
 
-= link_to 'New Admin', new_admin_path
+= link_to 'New Admin', new_teacher_path

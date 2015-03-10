@@ -1,2 +1,6 @@
-- content_for(:title, 'Students Dashboard')
-%h2 Hello, #{current_user.username.humanize}!
+- if admin_signed_in?
+  = render 'admin'
+- elsif user_signed_in?
+  = render 'user'
+- else
+  = render 'landing_page'
