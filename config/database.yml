@@ -47,12 +47,12 @@
 # sudo -u postgres psql template1
 # ALTER USER postgres with encrypted password 'Pa$$w0rd';
 
-# Edit /etc/postgresql/89.3/main/pg_hba.conf line
+# Edit /etc/postgresql/9.3/main/pg_hba.conf line
 # local   all         postgres                          peer
 # To
 # local   all         postgres                          md5
 
-# sudo /etc/init.d/postgresql-9.3 restart
+# sudo /etc/init.d/postgresql restart
 
 # Create user
 # sudo -i -u postgres
@@ -84,3 +84,27 @@ production:
   encoding: unicode
   database: link_production
   pool: 5
+
+# New database access for Docker images and vagrant
+#default: &default
+  #adapter: postgresql
+  #pool: 5
+  #timeout: 5000
+
+#development:
+  #<<: *default
+  #encoding: unicode
+  #database: dpa_development
+  #pool: 5
+  #username: <%= ENV['DB_ENV_POSTGRESQL_USER'] %>
+  #password: <%= ENV['DB_ENV_POSTGRESQL_PASS'] %>
+  #host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
+
+#test:
+  #<<: *default
+  #encoding: unicode
+  #database: dpa_test
+  #pool: 5
+  #username: <%= ENV['DB_ENV_POSTGRESQL_USER'] %>
+  #password: <%= ENV['DB_ENV_POSTGRESQL_PASS'] %>
+  #host: <%= ENV['DB_PORT_5432_TCP_ADDR'] %>
