@@ -2,7 +2,7 @@
 # Configuration #
 #################
 
-script_url          = "https://raw.githubusercontent.com/jeremymichel/vagrant-rails/master/scripts"
+#script_url          = "https://raw.githubusercontent.com/jeremymichel/vagrant-rails/master/scripts"
 
 static_ip           = "192.168.33.10"
 guest_port          = 3000
@@ -45,26 +45,26 @@ Vagrant.configure("2") do |config|
   ###################################################
 
   # Base packages
-  config.vm.provision :shell, path: "#{script_url}/base.sh"
+  config.vm.provision :shell, path: "./scripts/base.sh"
 
   # Ruby via RVM
-  config.vm.provision :shell, path: "#{script_url}/ruby.sh", privileged: false, args: [ruby_version, rails_version]
+  config.vm.provision :shell, path: "./scripts/ruby.sh", privileged: false, args: [ruby_version, rails_version]
 
   # SQLite
-  # config.vm.provision :shell, path: "#{script_url}/sqlite.sh"
+  # config.vm.provision :shell, path: "./scripts/sqlite.sh"
 
   # PostgreSQL
-  config.vm.provision :shell, path: "#{script_url}/postgresql.sh"
+  config.vm.provision :shell, path: "./scripts/posgresql.sh"
 
   # MySQL
-  # config.vm.provision :shell, path: "#{script_url}/mysql.sh", args: [mysql_root_password]
+  # config.vm.provision :shell, path: "#./scripts/mysql.sh", args: [mysql_root_password]
 
   # MongoDB
-  # config.vm.provision :shell, path: "#{script_url}/mongodb.sh"
+  # config.vm.provision :shell, path: "./scripts/mongodb.sh"
 
   # Node.js
-  config.vm.provision :shell, path: "#{script_url}/node.sh", privileged: false
+  config.vm.provision :shell, path: "./scripts/node.sh", privileged: false
 
   # Bundle
-  config.vm.provision :shell, path: "#{script_url}/bundle.sh"
+  config.vm.provision :shell, path: "./scripts/bundle.sh"
 end
