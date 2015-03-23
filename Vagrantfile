@@ -65,5 +65,6 @@ Vagrant.configure("2") do |config|
   # Node.js
   config.vm.provision :shell, path: "#{script_url}/node.sh", privileged: false
 
-
+  # Bundle
+  config.vm.provision :shell, path: "#{script_url}/bundle.sh"
 end

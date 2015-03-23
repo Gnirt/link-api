@@ -31,4 +31,14 @@ To get started you need to have [Vagrant](http://www.vagrantup.com) and [Virtal 
 After that you just need to start your VM:
 <pre>vagrant up</pre>
 
+Log into the virtual machine
+<pre>vagrant ssh</pre>
+
+#Configure database
+## See links for more details
+## http://stackoverflow.com/questions/1471571/how-to-configure-postgresql-for-the-first-time
+
+Exec pending migration
+<pre>rake db:migrate</pre>
+<pre>ras<pre>
 And its done !

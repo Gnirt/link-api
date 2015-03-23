@@ -3,7 +3,7 @@
 echo "Setting Timezone & Locale to $3 & C.UTF-8"
 
 sudo ln -sf /usr/share/zoneinfo/$3 /etc/localtime
-sudo locale-gen C.UTF-8
+sudo locale-gen UTF-8
 export LANG=C.UTF-8
 
 echo "export LANGUAGE=en_US.UTF-8" >> /home/vagrant/.bashrc
