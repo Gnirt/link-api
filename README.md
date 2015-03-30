@@ -9,7 +9,7 @@ L-ink platform for teachers to connect class in the world
 
 Then run your server
 <pre>
-rails s
+rails s -b 0.0.0.0
 </pre>
 
 Check at [http://localhost:3000](http://localhost:3000)
@@ -35,6 +35,13 @@ Log into the virtual machine
 <pre>vagrant ssh</pre>
 
 #Configure database
+<pre> sudo su - postgres </pre>
+<pre> psql </pre>
+<pre> ALTER USER postgres with encrypted password 'Pa$$w0rd'; </pre>
+<pre> CREATE DATABASE link_development WITH OWNER postgres; </pre>
+<pre> GRANT ALL PRIVILEGES ON DATABASE link_development TO postgres; </pre>
+
+
 ## See links for more details
 ## http://stackoverflow.com/questions/1471571/how-to-configure-postgresql-for-the-first-time
 

@@ -41,24 +41,12 @@
 
 # Configure vagrant db :
 
-# Edit /etc/postgresql/9.3/main/postgresql.conf
-# uncomment listen_addresses = 'localhost'
-
-# sudo -u postgres psql template1
+# sudo su - postgres
+# psql
 # ALTER USER postgres with encrypted password 'Pa$$w0rd';
+# CREATE DATABASE link_development WITH OWNER postgres;
+# GRANT ALL PRIVILEGES ON DATABASE link_development TO postgres;
 
-# Edit /etc/postgresql/89.3/main/pg_hba.conf line
-# local   all         postgres                          peer
-# To
-# local   all         postgres                          md5
-
-# sudo /etc/init.d/postgresql-9.3 restart
-
-# Create user
-# sudo -i -u postgres
-# createuser --interactive
-# Enter name of role to add: vagrant
-# Shall the new role be a superuser? (y/n) y
 development:
   adapter: postgresql
   encoding: unicode

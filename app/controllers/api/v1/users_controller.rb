@@ -18,6 +18,8 @@ class Api::V1::UsersController < Api::V1::BaseController
     params.permit(
         :username,
         :email,
-        :admin_id)
+        :admin_id,
+        :authentication_token
+    )
   end
 end
