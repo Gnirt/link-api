@@ -32,6 +32,9 @@ class ApplicationController < ActionController::Base
     # timing attacks.
     if user && Devise.secure_compare(user.authentication_token, params[:user_token])
       sign_in user, store: false
+    # else
+    #   self.headers['WWW-Authenticate'] = 'Token realm="Application"'
+    #   render json: 'Bad credentials', status: 401
     end
   end
 end

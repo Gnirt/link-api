@@ -4,9 +4,10 @@ Here you can manage pupils
 = form_tag teacher_admins_add_student_path(@admin) do
   = field_set_tag do
     = label_tag :user, 'Pupils:'
-    = select_tag :user_id, options_from_collection_for_select(User.where("id NOT IN (?)", current_admin.users.map(&:id)), 'id', 'username'), include_blank: true , class: 'chosen-select'
+    = select_tag :user_id, options_from_collection_for_select(User.all, 'id', 'username'), include_blank: true , class: 'chosen-select'
     = submit_tag 'Add'
 
+<!-- User.where("id NOT IN (?)", current_admin.users.map(&:id)), 'id', 'username') -->
 .row
   - @users.each do |u|
     .col-md-3

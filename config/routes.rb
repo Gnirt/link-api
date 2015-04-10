@@ -19,7 +19,7 @@ Link::Application.routes.draw do
   get '/pupils/:username' =>  'users#show', as: :user_profile
 
   get '/pupils/:id', :to => 'users#show', :as => :user
- 
+
   resources :home, only: :index
   resources :teachers, :controller => "admins" do
     post 'add_student', to: 'admins#add_student', as: :admins_add_student
@@ -36,6 +36,7 @@ Link::Application.routes.draw do
 
   namespace :api do
     namespace :v1 do
+      get '/authenticate' => 'authenticates#authenticate'
       resources :users, except: [:new, :edit]
     end
   end
