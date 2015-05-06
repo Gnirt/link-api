@@ -1,5 +1,9 @@
 - content_for(:title, 'Landing page')
-.center.margin-bottom-80=image_tag "logo_link.png", size: "242x92"
+.center.margin-bottom-80.row
+  =image_tag "logo_link.png", size: "242x92"
+  %p
+    %br
+    Lier les enfants du monde via une correspondance ludique permettant de découvrir des langues et d’autres cultures.
 #lp_video.center
   %iframe.margin-top-30{:allowfullscreen => "", :frameborder => "0", :height => "480", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/68768275", :webkitallowfullscreen => "", :width => "850"}
 .row.margin-bottom-80
@@ -32,7 +36,7 @@
   .col-md-12.center.margin-bottom-80
     %p.color-white
       %br
-      Une façon ludique d'aborder l'enseignement, qui vous permettra de créer
+      Une nouvelle façon d'aborder l'enseignement, qui vous permettra de créer
       %br
       un projet scolaire annuelle et international
 .center.margin-bottom-80=image_tag "lp_ipad.png", size: "1000x874"
