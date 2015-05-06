@@ -72,4 +72,4 @@ end
 # gem 'debugger', group: [:development, :test]
 
 gem 'mailboxer', :git => 'git://github.com/div/mailboxer.git', :branch => 'rails42-foreigner'
-
+gem 'rails_12factor'
