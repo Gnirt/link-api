@@ -1,2 +1,49 @@
 - content_for(:title, 'Landing page')
-%h2 L-ink pen pal for classes landing page!
+.center.margin-bottom-80=image_tag "logo_link.png", size: "242x92"
+#lp_video.center
+  %iframe.margin-top-30{:allowfullscreen => "", :frameborder => "0", :height => "480", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/68768275", :webkitallowfullscreen => "", :width => "850"}
+.row.margin-bottom-80
+  %p.col-md-4.col-md-offset-2.center
+    La nouvelle App
+    %br
+    %span.lead
+      de
+      %span.color-white Correspondance 2.0
+      %br
+      %span.lead des
+      %span.color-white classes connectées !
+.row
+  .col-md-3.col-md-offset-1.center
+    =image_tag "lp_btn1.png"
+    %p
+      %br S'INITIER
+      AUX LANGUES
+  .col-md-4.center
+    =image_tag "lp_btn2.png"
+    %p
+      %br ECRIRE ET RECEVOIR
+      DU COURRIER
+  .col-md-3.center
+    =image_tag "lp_btn3.png"
+    %p
+      %br S'OUVRIR
+      AU MONDE
+.row
+  .col-md-12.center.margin-bottom-80
+    %p.color-white
+      %br
+      Une façon ludique d'aborder l'enseignement, qui vous permettra de créer
+      %br
+      un projet scolaire annuelle et international
+.center.margin-bottom-80=image_tag "lp_ipad.png", size: "1000x874"
+.row.margin-top-30
+  .col-md-5.center.col-md-offset-6.lead
+    %p
+      Vous etes
+      %br
+      professeur ?
+      %br
+      %br
+      = link_to "- Créer votre compte -", new_user_session_path
+      %br
+      \- Recevez notre newsletter -

@@ -4,6 +4,29 @@
 @import "font-awesome";
 @import "chosen";
 
+@font-face {
+  font-family: 'bosque';
+  src: font-url("Bosque-Regular.otf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 .center{
   text-align: center;
+}
+
+* {
+  font-family: bosque;
+}
+
+.margin-bottom-80 {
+  margin-bottom: 80px;
+}
+
+.margin-top-30 {
+  margin-top: 30px;
+}
+
+.color-white {
+  color: white;
 }
