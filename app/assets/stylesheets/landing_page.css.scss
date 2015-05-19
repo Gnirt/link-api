@@ -1,12 +1,34 @@
 .dashboard-index {
   .container-main {
-    background: image-url("landing_page_bg.jpg") no-repeat;
     min-height: 3200px;
     .lead {
       font-size: 31px;
     }
     font-size: 24px;
     letter-spacing: 1px;
+  }
+
+  #wrap > .container {
+    padding: 80px 15px 0;
+    padding-top: 0;
+    margin-top: -40px;
+  }
+  .navbar-default {
+    background-color: transparent;
+    border-color: transparent;
+  }
+  #wrap {
+    background: image-url("landing_page_bg.jpg") no-repeat;
+    background-size: cover;
+  }
+  .icone {
+    min-height: 300px;
+    position: relative;
+  }
+
+  .icone-content {
+    position: absolute;
+    bottom: 0;
   }
 }
 #lp_video {
