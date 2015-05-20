@@ -1,12 +1,12 @@
 - content_for(:title, 'Landing page')
 .center.row
   =image_tag "logo_link.png", size: "242x92"
-  %p.color-violet
+  %p.color-violet.line-height-1.margin-top-10
     %br
     Lier les enfants du monde grâce à la <span class="color-purple">correspondance</span> ludique.<br> Découvrir des <span class="color-light-violet">langues</span> et d’autres <span class="color-light-violet">cultures</span>.
 #lp_video.center
   %iframe.margin-top-30{:allowfullscreen => "", :frameborder => "0", :height => "480", :mozallowfullscreen => "", :src => "https://player.vimeo.com/video/68768275", :webkitallowfullscreen => "", :width => "850"}
-.row.margin-bottom-60.margin-top-200
+.row.margin-bottom-60.margin-top-120
   %p.col-md-4.col-md-offset-2.center.color-violet.margin-left-255.font-size-29
     La nouvelle App
     %br
@@ -35,7 +35,7 @@
         %br S'OUVRIR
         AU MONDE
 .row
-  .col-md-9.col-md-offset-3.margin-bottom-80.font-size-29
+  .col-md-9.col-md-offset-3.font-size-29
     %p.color-grey
       %br
       Une nouvelle façon d'aborder l'enseignement,
@@ -50,4 +50,6 @@
       %br
       %br
       .font-size-34= link_to "- Créer votre compte -", new_user_session_path, class: "color-violet"
-      %span.font-size-34.color-purple - Recevez notre newsletter -
+      %br
+      =image_tag "app_store_icone.png", size: "116x108", class: "margin-top--5 float-left"
+      %p.font-size-34.color-purple.margin-left-20.text-align-left.margin-top-5 Télécharger notre App sur l'Apple Store
