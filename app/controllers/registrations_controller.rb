@@ -37,7 +37,7 @@ class RegistrationsController < Devise::RegistrationsController
   # list between create and update. Also, you can specialize this method
   # with per-user checking of permissible attributes.
   def user_params
-    params.require(:user).permit(:avatar, :email, :current_password, :password, :password_confirmation, :username)
+    params.require(:user).permit(:avatar, :email, :current_password, :password, :password_confirmation, :username, :name)
   end
 
 end
