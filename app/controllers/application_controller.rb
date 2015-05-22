@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
   acts_as_token_authentication_handler_for User, fallback_to_devise: false
   # This is our new function that comes before Devise's one
   before_filter :authenticate_user_from_token!
+  before_filter :update_sanitized_params, if: :devise_controller?
 
   rescue_from ActiveRecord::RecordNotFound do
     flash[:warning] = 'Resource not found.'
@@ -36,5 +37,9 @@ class ApplicationController < ActionController::Base
     #   self.headers['WWW-Authenticate'] = 'Token realm="Application"'
     #   render json: 'Bad credentials', status: 401
     end
+  end
+
+  def update_sanitized_params
+    devise_parameter_sanitizer.for(:sign_up) {|u| u.permit(:password, :password_confirmation, :name, :email)}
   end
 end
